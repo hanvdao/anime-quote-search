@@ -12,7 +12,10 @@ searchInput.addEventListener("input", (event) => {
   timeout = setTimeout(performSearch, 100);
 });
 
-randomButton.addEventListener("click", performSearch);
+randomButton.addEventListener("click", () => {
+  searchInput.value = null;
+  performSearch();
+});
 
 function performSearch() {
   const inputValue = searchInput.value;
